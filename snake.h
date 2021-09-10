@@ -26,7 +26,7 @@ enum Colors {
 enum Orientations { UP, RIGHT, DOWN, LEFT };
 
 // ฅʕ·ᴥ·　ʔฅ
-#define APPLE 235
+#define APPLE 149
 
 // Teclas de las Flechas
 #define KEY_UP 72
