@@ -34,15 +34,6 @@ enum Orientations { UP, RIGHT, DOWN, LEFT };
 #define KEY_DOWN 80
 #define KEY_LEFT 75
 
-// #define EXCLAMATION_MARK 173
-// #define QUESTION_MARK 168
-// #define A_ACCENT 160
-// #define E_ACCENT 130
-// #define I_ACCENT 161
-// #define O_ACCENT 162
-// #define U_ACCENT 163
-// #define ENIE 164
-
 // limites del cuadro
 #define LEFT_FRAME 13
 #define RIGHT_FRAME 56

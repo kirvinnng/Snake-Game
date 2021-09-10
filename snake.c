@@ -10,8 +10,10 @@ int stayAlive = 1;
 int score = 0;
 
 int main() {
-    SetConsoleTitle("Snake by kevin & matu <3");
+
     srand(time(NULL));
+    SetConsoleTitle("Snake by kevin & matu <3");
+
     // Tamaño  de la consola
     system("MODE 75, 30");
 
@@ -21,10 +23,6 @@ int main() {
 
     gameLoop();
 
-    cleanLine(2);
-    cleanLine(1);
-
-    setColor(LIGHTCYAN);
     showScore(0);
     setColor(LIGHTMAGENTA);
 
@@ -49,6 +47,9 @@ void gameLoop() {
         Sleep(speed ? SECOND_X : SECOND_Y);
     }
     resetSnake(&snake);
+    cleanLine(1);
+    cleanLine(2);
+    cleanLine(3);
 }
 
 int verifyCoord(Snake *snake, const int x, const int y) {

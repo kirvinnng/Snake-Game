@@ -86,6 +86,7 @@ int snake_move(Snake **snake) {
     (*snake)->coord.X = x;
     (*snake)->coord.Y = y;
     printSnake(*snake);
+    fflush(stdout);
     if (bitesItself(*snake, x, y)) {
         return 0;
     } else {

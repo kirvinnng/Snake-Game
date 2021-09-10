@@ -4,7 +4,8 @@
 extern int score;
 
 void showScore(const int increment) {
-    gotoxy(RIGHT_FRAME - 9, TOP_FRAME - 2);
+    setColor(LIGHTCYAN);
+    gotoxy(RIGHT_FRAME - 10, TOP_FRAME - 2);
     printf("SCORE: %05d ", score);
     score += increment;
 }
@@ -14,16 +15,27 @@ void showInstructions() {
     int arrow_left = 17;
     int arrow_down = 31;
     int arrow_up = 30;
-
-    const int x = 1;
-    const int y = 1;
-
-    gotoxy(x, y + 1);
-    printf("Movement keys : ");
-    gotoxy(x + 22, y);
+    const int x = 20;
+    const int y = 0;
+    setColor(YELLOW);
+    gotoxy(x + 2, y + 2);
     printf("%c", arrow_up);
-    gotoxy(x + 20, y + 1);
+    gotoxy(x + 0, y + 3);
     printf("%c %c %c", arrow_left, arrow_down, arrow_right);
+    setColor(GREY);
+    // gotoxy(x + 9, y);
+    // printf("- UP -");
+    // gotoxy(x + 3, y + 2);
+    // printf("LEFT");
+    // gotoxy(x + 16, y + 2);
+    // printf("RIGTH");
+    // gotoxy(x + 10, y + 3);
+    // printf("DOWN");
+
+    gotoxy(x - 8, y);
+    printf("Arrow keys for movement");
+
+    lineHori(x - 8, y + 1, 22);
 }
 
 int *toArray(int number) {
@@ -60,7 +72,7 @@ void showFinalScore() {
         }
     }
 
-    x += 14; // una linea matias
+    x += 14;
     const int y = TOP_FRAME + 10;
 
     for (int i = 0; i < size; i++) {
@@ -258,7 +270,7 @@ void printFrame(const int startX, const int startY, int endX, int endY) {
 
 void lineHori(int x, int y, int length) {
     const int HORI = 196;
-    for (int i = 0; i < length + x; i++) {
+    for (int i = x; i < length + x; i++) {
         gotoxy(i, y);
         printf("%c", HORI);
     }
@@ -266,7 +278,7 @@ void lineHori(int x, int y, int length) {
 
 void lineVert(int x, int y, int length) {
     const int VERT = 179;
-    for (int i = 0; i < length + y; i++) {
+    for (int i = y; i < length + y; i++) {
         gotoxy(x, i);
         printf("%c", VERT);
     }
