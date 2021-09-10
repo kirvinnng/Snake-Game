@@ -105,7 +105,7 @@ void showFinalScore() {
 }
 
 void printNumber0(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___ ");
     gotoxy(x, y + 1);
     printf("|   |");
@@ -116,7 +116,7 @@ void printNumber0(const int x, const int y) {
 }
 
 void printNumber1(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___   ");
     gotoxy(x, y + 1);
     printf("|_  |  ");
@@ -127,7 +127,7 @@ void printNumber1(const int x, const int y) {
 }
 
 void printNumber2(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___ ");
     gotoxy(x, y + 1);
     printf("|_  |");
@@ -138,7 +138,7 @@ void printNumber2(const int x, const int y) {
 }
 
 void printNumber3(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___ ");
     gotoxy(x, y + 1);
     printf("|_  |");
@@ -149,18 +149,18 @@ void printNumber3(const int x, const int y) {
 }
 
 void printNumber4(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___ ");
     gotoxy(x, y + 1);
     printf("| | |");
     gotoxy(x, y + 2);
     printf("|_  |");
-    gotoxy(x+2, y + 3);
+    gotoxy(x + 2, y + 3);
     printf("|_|");
 }
 
 void printNumber5(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___ ");
     gotoxy(x, y + 1);
     printf("|  _|");
@@ -171,7 +171,7 @@ void printNumber5(const int x, const int y) {
 }
 
 void printNumber6(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___ ");
     gotoxy(x, y + 1);
     printf("|  _|");
@@ -182,18 +182,18 @@ void printNumber6(const int x, const int y) {
 }
 
 void printNumber7(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___ ");
     gotoxy(x, y + 1);
     printf("|_  |");
-    gotoxy(x+2, y + 2);
+    gotoxy(x + 2, y + 2);
     printf("| |");
-    gotoxy(x+2, y + 3);
+    gotoxy(x + 2, y + 3);
     printf("|_|");
 }
 
 void printNumber8(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___ ");
     gotoxy(x, y + 1);
     printf("| . |");
@@ -204,7 +204,7 @@ void printNumber8(const int x, const int y) {
 }
 
 void printNumber9(const int x, const int y) {
-    gotoxy(x+1, y);
+    gotoxy(x + 1, y);
     printf("___ ");
     gotoxy(x, y + 1);
     printf("| . |");
