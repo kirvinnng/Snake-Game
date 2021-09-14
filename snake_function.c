@@ -13,6 +13,9 @@ void initSnake(Snake **snake) {
     aux.coord.Y = TOP_FRAME + 1;
 
     *snake = createNode(aux);
+
+    (*snake)->tail = *snake;
+    (*snake)->tail->next = NULL;
 }
 
 int snake_move(Snake **snake) {
@@ -76,26 +79,28 @@ int snake_move(Snake **snake) {
 
     //* Verificacion de la mordida
     if (x == apple.X && y == apple.Y) {
-        appleAppear(*snake);  // Aparicion de la manzana
-        increaseSnake(snake); // Si la come incrementa
+
+        appleAppear(*snake); //* Aparicion de la manzana
+
+        increaseSnake(snake); //* Si la come incrementa
+
         showScore(REWARD_FOR_EATING);
-        REWARD_FOR_EATING += 5;
+
+        REWARD_FOR_EATING += 2;
     }
 
     updateSnake(snake);
+
     (*snake)->coord.X = x;
     (*snake)->coord.Y = y;
     printSnake(*snake);
-    fflush(stdout);
-    if (bitesItself(*snake, x, y)) {
-        return 0;
-    } else {
-        return 1;
-    }
+
+    return (!bitesItself(*snake, x, y));
 }
 
 int bitesItself(Snake *snake, const int x, const int y) {
     snake = snake->next; // evitamos la cabeza
+
     while (snake != NULL) {
         if (snake->coord.X == x && snake->coord.Y == y) {
             return 1;
@@ -107,20 +112,23 @@ int bitesItself(Snake *snake, const int x, const int y) {
 }
 
 void updateSnake(Snake **snake) {
-    Node *new = (*snake)->next;
+    Node *after = (*snake)->next;
     Node *prev = (*snake);
     COORD aux;
     int i = 0;
     //* Actualizando los valores de las coordenadas
-    while (new != NULL) {
-        aux.X = new->coord.X;
-        aux.Y = new->coord.Y;
-        new->coord.X = prev->coord.X;
-        new->coord.Y = prev->coord.Y;
+    while (after != NULL) {
+
+        aux.X = after->coord.X;
+        aux.Y = after->coord.Y;
+
+        after->coord.X = prev->coord.X;
+        after->coord.Y = prev->coord.Y;
+
         prev->coord.X = aux.X;
         prev->coord.Y = aux.Y;
 
-        new = new->next; // 3
+        after = after->next; // 3
     }
 }
 
@@ -142,25 +150,15 @@ void clearSnakeBody(Snake *snake) {
 }
 
 void increaseSnake(Snake **snake) {
-
     Snake aux;
     aux.coord.X = (*snake)->coord.X;
     aux.coord.Y = (*snake)->coord.Y;
-    Node *nNew = createNode(aux);
-    insertEnd(snake, nNew); // Insertar al final de la cola
+    insertEnd(snake, createNode(aux)); // Insertar al final de la cola
 }
 
 void insertEnd(Snake **head, Snake *nNew) {
-    Node *aux;
-    if (*head == NULL) {
-        *head = nNew;
-    } else {
-        aux = *head;
-        while (aux->next != NULL) {
-            aux = aux->next;
-        }
-        aux->next = nNew;
-    }
+    (*head)->tail->next = nNew;
+    (*head)->tail = nNew;
 }
 
 Snake *createNode(Snake nNew) {
@@ -170,6 +168,7 @@ Snake *createNode(Snake nNew) {
     aux->coord.Y = nNew.coord.Y;
     aux->orientation = DOWN;
     aux->next = NULL;
+    aux->tail = NULL;
 
     return aux;
 }

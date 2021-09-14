@@ -1,8 +1,12 @@
 #pragma once
 
+#include <conio.h>
 #include <malloc.h>
+#include <pthread.h>
 #include <stdio.h>
+#include <time.h>
 #include <windows.h>
+
 // [0 ; 15]
 enum Colors {
     BLACK,
@@ -35,21 +39,23 @@ enum Orientations { UP, RIGHT, DOWN, LEFT };
 #define KEY_LEFT 75
 
 // limites del cuadro
-#define LEFT_FRAME 13
-#define RIGHT_FRAME 56
+#define LEFT_FRAME 15
+#define RIGHT_FRAME 58
 #define TOP_FRAME 5
-#define BOTTOM_FRAME 24
+#define BOTTOM_FRAME 14
 
 // Limite de los movimiento
 #define SECOND 1000
-#define SPEED_X 15
-#define SPEED_Y 5
+#define SPEED_X 26 // 20
+#define SPEED_Y 10 // 6
 #define SECOND_X SECOND / SPEED_X
 #define SECOND_Y SECOND / SPEED_Y
 
 typedef struct Snake {
     COORD coord;
     int orientation;
+
+    struct Snake *tail;
     struct Snake *next;
 } Snake;
 
