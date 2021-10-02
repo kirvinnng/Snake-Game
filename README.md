@@ -1,5 +1,4 @@
-# _Snake_ :snake:
-> ### _________________________________________________________________________________________
+## _Snake_ :snake:
 
 
 ![image](https://user-images.githubusercontent.com/82684580/132788076-ade9ceb1-57e0-4f6d-b75b-638f37e2c510.png)
