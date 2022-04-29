@@ -325,11 +325,11 @@ void printNumber5(const int x, const int y) {
 
 void printNumber6(const int x, const int y) {
     gotoxy(x + 1, y);
-    printf("___ ");
+    printf("___");
     gotoxy(x, y + 1);
     printf("|  _|");
     gotoxy(x, y + 2);
-    printf("|_  |");
+    printf("| . |");
     gotoxy(x, y + 3);
     printf("|___|");
 }

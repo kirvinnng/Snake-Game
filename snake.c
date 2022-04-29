@@ -28,7 +28,7 @@ int main() {
 
     showFinalScore(score);
 
-    getchar();
+    gotoxy(70, 25);
 
     return 0;
 }
