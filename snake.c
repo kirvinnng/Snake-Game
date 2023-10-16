@@ -19,7 +19,6 @@ int main() {
 
     system("cls");
 
-    //*Cuadrante del juego
     printFrame(LEFT_FRAME - 1, TOP_FRAME - 1, RIGHT_FRAME + 1, BOTTOM_FRAME + 1);
     showInstructions();
 
