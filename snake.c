@@ -10,7 +10,6 @@ int main() {
     srand(time(NULL));
     SetConsoleTitle("Snake by kevin & matu <3");
 
-    // Tamaño  de la consola
     system("MODE 75, 30");
 
     snakeTitle();
