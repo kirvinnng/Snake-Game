@@ -60,7 +60,7 @@ void gameLoop() {
 int verifyCoord(Snake *snake, const int x, const int y) {
 
     while (snake != NULL) {
-        if (snake->coord.X == x && snake->coord.Y == y) { //? VAMOOOOOS MATIIIIAAAASSSSS !!!
+        if (snake->coord.X == x && snake->coord.Y == y) { 
             return 0;
         } else {
             snake = snake->next;
@@ -68,7 +68,7 @@ int verifyCoord(Snake *snake, const int x, const int y) {
     }
     return 1;
 }
-void appleAppear(Snake *snake) { // DONDE APARECER LA MANZANA
+void appleAppear(Snake *snake) { 
 
     do {
         apple.X = rand() % ((RIGHT_FRAME - 1) - (LEFT_FRAME + 1)) + (LEFT_FRAME + 1);
